@@ -8,8 +8,8 @@
     <script src="../lib/angular.min.js"></script>
     <script src="../lib/angular-sanitize.min.js"></script>
     <script src="../src/proton.multi-list-picker.js"></script>
+    <script src="../src/nxtDatePicker.js"></script>
     <script src="app/app.js"></script>
-    <script type="application/javascript" src="http://localhost:13001/livereload.js"></script>
     <style>
         .proton-multi-list-picker {
             font-size: 20px;
@@ -38,15 +38,7 @@
            ng-click="showing = !showing"/>
 </label>
 <br/>
-<proton:multi-list-picker ng-model="model" attachment="{{attachment}}" bind-html="{{bindHtml}}" done="showing = false" ng-show="showing">
-    <proton:multi-list-picker-list alias="year" static="false" source="getYears()"></proton:multi-list-picker-list>
-    <proton:multi-list-picker-list alias="month" cycle="true" source="getMonths()" strict-matching="true"></proton:multi-list-picker-list>
-    <proton:multi-list-picker-list alias="day" cycle="true" source="getDays(model.year, model.month)" strict-matching="true">
-    </proton:multi-list-picker-list>
-    <proton:multi-list-picker-list alias="hour" source="getHour()" cycle="true">
-    </proton:multi-list-picker-list>
-    <proton:multi-list-picker-divider style="width:10px;padding:0px">:</proton:multi-list-picker-divider>
-    <proton:multi-list-picker-list alias="minute" source="getMinutes()" cycle="true"></proton:multi-list-picker-list>
-</proton:multi-list-picker>
+<nxt-date-picker done="getDateSucceed()" ng-show="showing">
+</nxt-date-picker>
 </body>
 </html>

@@ -1,26 +1,12 @@
-<proton:multi-list-picker ng-model="model" attachment="{{attachment}}" bind-html="{{bindHtml}}" done="showing = false"
-ng-show="showing">
-<proton:multi-list-picker-list alias="year" static="false" source="getYears()">
-</proton:multi-list-picker-list>
-<proton:multi-list-picker-list alias="month" cycle="true" strict-matching="true">
-<proton:multi-list-picker-list-item value="0">1月</span></proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="1">2月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="2">3月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="3">4月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="4">5月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="5">6月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="6">7月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="7">8月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="8">9月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="9">10月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="10">11月</proton:multi-list-picker-list-item>
-<proton:multi-list-picker-list-item value="11">12月</proton:multi-list-picker-list-item>
-</proton:multi-list-picker-list>
-<proton:multi-list-picker-list alias="day" cycle="true" source="getDays(model.year, model.month)" strict-matching="true">
-</proton:multi-list-picker-list>
-<proton:multi-list-picker-list alias="hour" source="getHour()" cycle="true">
-</proton:multi-list-picker-list>
-<proton:multi-list-picker-divider style="width:10px;">:</proton:multi-list-picker-divider>
-<proton:multi-list-picker-list alias="minute" source="getMinutes()" cycle="true">
-</proton:multi-list-picker-list>
-</proton:multi-list-picker>
+<div>
+    <proton:multi-list-picker ng-model="model" attachment="{{attachment}}" bind-html="{{bindHtml}}" done="getDateSucceed()">
+        <proton:multi-list-picker-list alias="year" static="false" source="getYears()"></proton:multi-list-picker-list>
+        <proton:multi-list-picker-list alias="month" cycle="true" source="getMonths()" strict-matching="true"></proton:multi-list-picker-list>
+        <proton:multi-list-picker-list alias="day" cycle="true" source="getDays(model.year, model.month)" strict-matching="true">
+        </proton:multi-list-picker-list>
+        <proton:multi-list-picker-list alias="hour" source="getHour()" cycle="true">
+        </proton:multi-list-picker-list>
+        <proton:multi-list-picker-divider style="width:10px;padding:0px">:</proton:multi-list-picker-divider>
+        <proton:multi-list-picker-list alias="minute" source="getMinutes()" cycle="true"></proton:multi-list-picker-list>
+    </proton:multi-list-picker>
+</div>
